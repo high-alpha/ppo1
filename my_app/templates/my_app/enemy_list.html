@@ -1,0 +1,21 @@
+﻿<html><head>
+<title>ПрикладноеПО1</title>
+</head>
+
+<body>
+	<div>
+		<h1><a href="/">Домашняя страница</a></h1>
+	</div>
+
+{% for enemy in enemies %}
+	<div>
+		<h1><a href="">{{ enemy.name }}</a></h1>
+		<p>power: {{ enemy.power }}</p>
+		<p>shield: {{ enemy.shield }}</p>
+	</div>
+{% endfor%}
+<div>
+<h2>Здравствуй, Пользователь!</h2>
+</div>
+</body>
+</html>
