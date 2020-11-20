@@ -1,6 +1,7 @@
 ﻿from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Enemy
+from .models import Weapon
 
 # Create your views here.
 '''
