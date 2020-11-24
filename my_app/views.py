@@ -2,7 +2,8 @@
 from django.http import HttpResponse
 from .models import Enemy
 from .models import Weapon
-
+from .forms import EnemyForm
+from .forms import WeaponForm
 # Create your views here.
 '''
 def enemy_list(request):
@@ -16,3 +17,10 @@ def enemy_list(request):
 def weapon_list(request):
 	weapons = Weapon.objects.order_by('title')
 	return render(request, 'my_app/weapon_list.html', {'weapons': weapons})
+
+def enemy_new(request):
+	form = EnemyForm()
+	return render(request, 'my_app/enemy_edit.html', {'form': form})
+def weapon_new(request):
+	form = WeaponForm()
+	return render(request, 'my_app/weapon_edit.html', {'form': form})

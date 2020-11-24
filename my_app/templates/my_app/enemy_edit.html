@@ -1,0 +1,12 @@
+<html>
+<head>
+    <title>Редактируем записи у вражинt</title>
+    </head>
+<body>
+    <h1>Новая запись в post</h1>
+    <form     method="POST"     class="enemy-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
