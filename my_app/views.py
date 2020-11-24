@@ -24,8 +24,8 @@ def enemy_new(request):
 	return render(request, 'my_app/enemy_edit.html', {'form': form})
 	'''
 def enemy_new(request):
-	if request.method == "ENEMY":
-		form = EnemyForm(request.ENEMY)
+	if request.method == "POST":
+		form = EnemyForm(request.POST)
 		if form.is_valid():
 			post = form.save(commit=False)
 			post.save()
@@ -35,5 +35,12 @@ def enemy_new(request):
 	return render(request, 'my_app/enemy_edit.html', {'form': form})
 
 def weapon_new(request):
-	form = WeaponForm()
+	if request.method == "POST":
+		form = WeaponForm(request.POST)
+		if form.is_valid():
+			post = form.save(commit=False)
+			post.save()
+			return redirect('weapon_list')
+	else:
+		form = WeaponForm()
 	return render(request, 'my_app/weapon_edit.html', {'form': form})

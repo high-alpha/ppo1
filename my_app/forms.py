@@ -10,8 +10,10 @@ class EnemyTypeForm (forms.ModelForm):
 '''
 class EnemyForm (forms.ModelForm):
     class Meta:
-        model = Enemyfields = ('name','power','shield',)
+        model = Enemy
+        fields = ('name','power','shield','etype',)
 
 class WeaponForm (forms.ModelForm):
     class Meta:
-        model = Weaponfields = ('title','damage',)
+        model = Weapon
+        fields = ('title','damage',)
