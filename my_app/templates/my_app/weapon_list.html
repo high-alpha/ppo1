@@ -1,18 +1,28 @@
-﻿<html><head>
+﻿{% load static %}
+<html><head>
+	<link  rel="stylesheet"  href="{%  static  'css/app.css' %}">
 <title>ПрикладноеПО1</title>
 </head>
+
 
 <body>
 	<div>
 		<h1>Пушки</h1>
 	</div>
 <div>
+	<div class="content container">
+		<div class="row">
+			<div class="col-md-8">
 {% for weapon in weapons %}
 	<div>
 		<h1><a href="">{{ weapon.title}}</a></h1>
 		<p>power: {{ weapon.damage }}</p>
 	</div>
 {% endfor%}
+		</div>
+		</div>
+		</div>
+
 <h2>Здравствуй, Пользователь!</h2>
 </div>
 </body>
