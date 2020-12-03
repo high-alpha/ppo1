@@ -11,6 +11,7 @@ def enemy_list(request):
 	html=  "<html><body><H1>Вот они, вражины!!!</H1></body></html>"
 	return HttpResponse(html)
 '''
+
 def enemy_list(request):
 	enemies = Enemy.objects.order_by('name')
 	return render(request, 'my_app/enemy_list.html', {'enemies': enemies})
@@ -24,6 +25,8 @@ def enemy_new(request):
 	return render(request, 'my_app/enemy_edit.html', {'form': form})
 	'''
 def enemy_new(request):
+	if not request.user.is_superuser:
+		return render(request, 'my_app/oi_page.html', {})
 	if request.method == "POST":
 		form = EnemyForm(request.POST)
 		if form.is_valid():
@@ -35,6 +38,8 @@ def enemy_new(request):
 	return render(request, 'my_app/enemy_edit.html', {'form': form})
 
 def weapon_new(request):
+	if not request.user.is_superuser:
+		return render(request, 'my_app/oi_page.html', {})
 	if request.method == "POST":
 		form = WeaponForm(request.POST)
 		if form.is_valid():

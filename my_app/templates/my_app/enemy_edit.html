@@ -1,8 +1,9 @@
-<html>
+﻿<html>
 <head>
     <title>Редактируем записи у вражинt</title>
     </head>
 <body>
+<h1><a href="/">Список врагов</a></h1> 
     <h1>Новая запись в enemy</h1>
     <form     method="POST"     class="enemy-form">{% csrf_token %}
         {{ form.as_p }}
